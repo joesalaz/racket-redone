@@ -1,0 +1,18 @@
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+*{
+    margin:0;
+}
+
+body{
+    width:100%;
+background: #e6eae8;
+
+
+
+}
+
+
+
