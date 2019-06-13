@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSpinner } from '@angular/material';
 import { EmpUsersService } from '../services/empusers.service';
 import { SessionService } from '../services/session.service';
 import { MessengerService } from '../services/messenger.service';
@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private empUsersService: EmpUsersService,
     private sessionService: SessionService,
-    private messengerService: MessengerService
+    private messengerService: MessengerService,
+    private spinner: MatSpinner
   ) { }
   username: string;
   password: string;
@@ -53,7 +54,7 @@ export class LoginComponent implements OnInit {
         this.initInbox(res.id, type);
         if (type == 'student') {
           // Redirect the user to the student profile
-          // hard redirecr to refresh the session
+          // hard redirect to refresh the session
           window.location.href = '/stdprofile/' + res.id;
         }
         else if (type == 'employer') {
